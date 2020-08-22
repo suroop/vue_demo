@@ -1,26 +1,23 @@
 <template>
   <div class="comments">
-    <div class="time">Friday, January 12, 2020 at 10:52 AM</div>
-    <div class="others">
-      <img src="../assets/img6.jpg" alt="">
-      <div class="text" id="others-text">em ...? so what do you mean</div>
-    </div>
-    <div class="time">Friday, January 12, 2020 at 10:52 AM</div>
-    <div class="my">
-      <img src="../assets/img4.jpg" alt="">
-      <div class="text MyText">i have a task needed to be finished,</div>
-    </div>
-    <div class="time">Friday, January 12, 2020 at 10:52 AM</div>
-    <div class="my">
-      <img src="../assets/img4.jpg" alt="">
-      <div class="text MyText">but you know ... i am lazy /doge</div>
+    <div v-for="(message,index) in Messages" :key="index">
+      <div class="time">{{message.Time}}</div>
+      <div :class="message.UserType">
+        <img :src="message.img" alt="img">
+        <div :class="[message.TextType,'text']">{{message.Msg}}</div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "Comments"
+    name: "Comments",
+    props:{
+      Messages:{
+        type:Object
+      }
+    }
   }
 </script>
 
@@ -79,7 +76,7 @@
     margin: 10px 0;
   }
 
-  .comments .others #others-text {
+  .comments .others .others-text {
     background-color: #fff;
   }
 

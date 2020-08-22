@@ -13,10 +13,10 @@
       </ul>
       <h6>Frequent Contact</h6>
       <ul id="PeopleOnline">
-        <li class="People"><img src="../assets/img1.jpg" alt=""><span>John</span></li>
-        <li class="People"><img src="../assets/img2.jpg" alt=""><span>Bob</span></li>
-        <li class="People"><img src="../assets/img3.jpg" alt=""><span>Alice</span></li>
-        <li class="People"><img src="../assets/img5.jpg" alt=""><span>Wendy</span></li>
+        <li class="People"><img src="../../static/assets/img1.jpg" alt=""><span>John</span></li>
+        <li class="People"><img src="../../static/assets/img2.jpg" alt=""><span>Bob</span></li>
+        <li class="People"><img src="../../static/assets/img3.jpg" alt=""><span>Alice</span></li>
+        <li class="People"><img src="../../static/assets/img5.jpg" alt=""><span>Wendy</span></li>
       </ul>
       <div class="line"></div>
       <footer>

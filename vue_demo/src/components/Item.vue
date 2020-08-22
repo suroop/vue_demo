@@ -2,50 +2,14 @@
   <div>
     <div class="list-item">
       <div class="left">
-        <img src="../assets/img6.jpg" alt="">
+        <img :src="contact.img" alt="">
       </div>
       <div class="right">
         <div class="top">
-          <div class="name">Gennady Alexrevich</div>
-          <div class="LastTime">10:52AM</div>
+          <div class="name">{{contact.name}}</div>
+          <div class="LastTime">{{contact.LastTime}}</div>
         </div>
-        <div class="bottom">em ...? so what do you mean.</div>
-      </div>
-    </div>
-    <div class="list-item">
-      <div class="left">
-        <img src="../assets/img6.jpg" alt="">
-      </div>
-      <div class="right">
-        <div class="top">
-          <div class="name">Gennady Alexrevich</div>
-          <div class="LastTime">10:52AM</div>
-        </div>
-        <div class="bottom">em ...? so what do you mean.</div>
-      </div>
-    </div>
-    <div class="list-item">
-      <div class="left">
-        <img src="../assets/img6.jpg" alt="">
-      </div>
-      <div class="right">
-        <div class="top">
-          <div class="name">Gennady Alexrevich</div>
-          <div class="LastTime">10:52AM</div>
-        </div>
-        <div class="bottom">em ...? so what do you mean.</div>
-      </div>
-    </div>
-    <div class="list-item">
-      <div class="left">
-        <img src="../assets/img6.jpg" alt="">
-      </div>
-      <div class="right">
-        <div class="top">
-          <div class="name">Gennady Alexrevich</div>
-          <div class="LastTime">10:52AM</div>
-        </div>
-        <div class="bottom">em ...? so what do you mean.</div>
+        <div class="bottom">{{contact.LastText}}</div>
       </div>
     </div>
   </div>
@@ -54,7 +18,10 @@
 
 <script>
     export default {
-        name: "Item",
+      name: "Item",
+      props:{//指定属性名和属性类型
+        contact:Object
+      },
       data(){
           return {
 

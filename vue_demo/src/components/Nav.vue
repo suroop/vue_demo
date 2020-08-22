@@ -6,7 +6,7 @@
     </div>
     <div class="info">
       <div class="FakeImg">
-        <img src="../assets/img4.jpg" alt="">
+        <img src="../../static/assets/img4.jpg" alt="">
         <div class="point"></div>
       </div>
       <div class="username">Joseph Bowman</div>

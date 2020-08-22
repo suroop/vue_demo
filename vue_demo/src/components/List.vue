@@ -1,14 +1,15 @@
 <template>
   <div class="list">
-    <Item/>
+    <Item v-for="(contact,index) in contacts" :key="index" :contact="contact" />
   </div>
 </template>
 
 <script>
     import Item from "./Item";
     export default {
-        name: "List",
-      components: {Item}
+      name: "List",
+      components: {Item},
+      props:["contacts"]
     }
 </script>
 

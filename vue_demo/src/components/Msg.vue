@@ -1,11 +1,11 @@
 <template>
   <div class="msg">
-    <img src="../assets/img4.jpg" alt="">
+    <img src="../../static/assets/img4.jpg" alt="">
     <div class="textarea">
       <label>
-        <input type="text" placeholder="Type your message">
+        <input type="text" placeholder="Type your message" v-model="msg">
       </label>
-      <button><i class="fa fa-paperclip"></i></button>
+      <button><i class="fa fa-paperclip" @click="SendMsg"></i></button>
     </div>
     <input type="submit" value="send">
   </div>
@@ -13,7 +13,21 @@
 
 <script>
     export default {
-        name: "Msg"
+      name: "Msg",
+      props:{
+        SendMsg:{
+          type:Function,
+          required:true
+        }
+      },
+      data(){
+        return {
+          msg:''
+        }
+      },
+      methods:{
+
+      }
     }
 </script>
 
