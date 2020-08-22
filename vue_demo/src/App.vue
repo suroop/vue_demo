@@ -9,7 +9,7 @@
           <div class="left-col">
             <Top/>
             <Comments :Messages="Messages"/>
-            <Msg :SendMsg="SendMsg"/>
+            <Msg :addComment="addComment"/>
           </div>
           <div class="right-col">
             <Searchmem/>
@@ -44,8 +44,8 @@ export default {
     }
   },
   methods:{
-    SendMsg(msg){
-      this.Messages.push(msg);
+    addComment(message){
+      this.Messages.push(message);
     }
   },
   components: {

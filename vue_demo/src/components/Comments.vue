@@ -4,7 +4,7 @@
       <div class="time">{{message.Time}}</div>
       <div :class="message.UserType">
         <img :src="message.img" alt="img">
-        <div :class="[message.TextType,'text']">{{message.Msg}}</div>
+        <div :class="[message.TextType,'txt']">{{message.Msg}}</div>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
     name: "Comments",
     props:{
       Messages:{
-        type:Object
+        type:Array
       }
     }
   }
@@ -38,7 +38,7 @@
     margin: 0 25px;
   }
 
-  .comments .text {
+  .comments .txt {
     border-radius: 15px;
     padding-left: 15px;
     font-size: 18px;

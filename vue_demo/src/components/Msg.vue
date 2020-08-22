@@ -3,21 +3,22 @@
     <img src="../../static/assets/img4.jpg" alt="">
     <div class="textarea">
       <label>
-        <input type="text" placeholder="Type your message" v-model="msg">
+        <input type="text" placeholder="Type your message" @keydown.enter="SendMsg" v-model="msg">
       </label>
-      <button><i class="fa fa-paperclip" @click="SendMsg"></i></button>
+      <button><i class="fa fa-paperclip"></i></button>
     </div>
-    <input type="submit" value="send">
+    <input @click="SendMsg" type="submit" value="send">
   </div>
 </template>
 
 <script>
-    export default {
+  import moment from 'moment';
+  export default {
       name: "Msg",
       props:{
-        SendMsg:{
+        addComment:{
           type:Function,
-          required:true
+          required:true,
         }
       },
       data(){
@@ -26,7 +27,20 @@
         }
       },
       methods:{
-
+        SendMsg(){
+          let date = new Date();
+          let startDate = moment(date).format("ddd MMMM DD YYYY [at] hh:mm A");
+          const AMessage={
+            Msg:this.msg,
+            Time:startDate,
+            UserType:'my',
+            TextType:"MyText",
+            img:"../../static/assets/img4.jpg"
+          };
+          console.log(AMessage);
+          this.addComment(AMessage);
+          this.Msg='';
+        }
       }
     }
 </script>
