@@ -2,14 +2,40 @@
   <div class="searchmem">
     <div class="search-message">
       <label for="message"><i class="fa fa-search"></i></label>
-      <input type="text" name="search" id="message" placeholder="Search Message ..." autocomplete="off">
+      <input type="text" name="search" id="message" placeholder="Search Message ..." autocomplete="off" v-model="MemberName" @change="SearchName" @keydown.enter="Goto">
     </div>
   </div>
 </template>
 
 <script>
+  import Pubsub from 'pubsub-js'
     export default {
-        name: "Searchmem"
+      name: "Searchmem",
+      props:{
+        contacts:{
+          type:Array
+        }
+      },
+      data(){
+          return{
+            MemberName:'',
+            Members:[]
+          }
+      },
+      methods:{
+        Goto(){
+          Pubsub.publish("flash",this.Members);
+        },
+        SearchName(){
+         if(this.MemberName!==''){
+            this.contacts.forEach((item,index)=>{
+              if(item.includes(this.MemberName)){
+                this.Members.push(this.contacts[index])
+              }
+            });
+           }
+        }
+      }
     }
 </script>
 

@@ -9,10 +9,10 @@
           <div class="left-col">
             <Top/>
             <Comments :Messages="Messages"/>
-            <Msg :addComment="addComment"/>
+            <Msg @addComment="addComment"/>
           </div>
           <div class="right-col">
-            <Searchmem/>
+            <Searchmem :contact="contacts"/>
             <List :contacts="contacts"/>
           </div>
         </div>
@@ -62,29 +62,6 @@ export default {
 </script>
 
 <style>
-  *{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
-  }
-
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-
-  ::-webkit-scrollbar-track-piece {
-    background-color: #F1EFF1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: skyblue;
-    background-clip: padding-box;
-    min-height: 28px;
-    border-radius: 15px;
-  }
-
   #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

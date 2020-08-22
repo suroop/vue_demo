@@ -1,0 +1,22 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #F1EFF1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: skyblue;
+  background-clip: padding-box;
+  min-height: 28px;
+  border-radius: 15px;
+}

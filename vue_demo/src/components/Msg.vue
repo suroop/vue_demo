@@ -15,18 +15,12 @@
   import moment from 'moment';
   export default {
       name: "Msg",
-      props:{
-        addComment:{
-          type:Function,
-          required:true,
-        }
-      },
       data(){
         return {
           msg:''
         }
       },
-      methods:{
+    methods:{
         SendMsg(){
           let date = new Date();
           let startDate = moment(date).format("ddd MMMM DD YYYY [at] hh:mm A");
@@ -37,8 +31,8 @@
             TextType:"MyText",
             img:"../../static/assets/img4.jpg"
           };
-          console.log(AMessage);
-          this.addComment(AMessage);
+          /*console.log(AMessage);*/
+          this.$emit("addComment",AMessage);
           this.Msg='';
         }
       }
