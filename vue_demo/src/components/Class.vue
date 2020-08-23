@@ -18,12 +18,13 @@
         <li class="People"><img src="../../static/assets/img3.jpg" alt=""><span>Alice</span></li>
         <li class="People"><img src="../../static/assets/img5.jpg" alt=""><span>Wendy</span></li>
       </ul>
+      <router-view></router-view>
       <div class="line"></div>
       <footer>
         <ul>
-          <li><h5><router-link>About</router-link></h5></li>
-          <li><h5><router-link>Help</router-link></h5></li>
-          <li><h5><router-link>Contact</router-link></h5></li>
+          <li><h5><router-link to="/about">About</router-link></h5></li>
+          <li><h5><router-link to="/help">Help</router-link></h5></li>
+          <li><h5><router-link to="/contact">Contact</router-link></h5></li>
         </ul>
         <h5 style="text-align: center;color: #5F6267;">copyright&nbsp;©&nbsp;&nbsp;2020&nbsp;suroop</h5>
       </footer>
@@ -200,10 +201,20 @@
     line-height: 40px;
     cursor: pointer;
     -webkit-transition: .4s;
+
+  }
+  footer ul li:hover {
+    color: #BDC1C5;
+  }
+  footer ul li router-link,a{
+    text-decoration: none;
+    color: #5F6267;
     transition: .4s;
   }
-
-  footer ul li:hover {
+  footer ul li router-link:hover,a:hover{
+    color: #BDC1C5;
+  }
+  .router-link-active{
     color: #BDC1C5;
   }
 </style>

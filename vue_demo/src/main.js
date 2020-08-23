@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import Base from './base.css'
 import router from './router'
+import store from './store'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -14,5 +15,7 @@ new Vue({
     Base
   },
   template: '<App/>',
-  router
+  router,
+  store,
+  render:h => h(App)
 });

@@ -31,6 +31,7 @@
             TextType:"MyText",
             img:"../../static/assets/img4.jpg"
           };
+          this.$store.dispatch('addToDos',AMessage);
           this.$emit("addComment",AMessage);
           this.msg='';
         }

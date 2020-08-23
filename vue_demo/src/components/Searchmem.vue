@@ -11,25 +11,30 @@
   import Pubsub from 'pubsub-js'
     export default {
       name: "Searchmem",
-      props:{
+      /*props:{
         contacts:{
           type:Array
         }
-      },
+      },*/
       data(){
           return{
           MemberName:'',
           Members:[],
         }
       },
+      computed:{
+        Contacts(){
+          return this.$store.state.contacts;
+        }
+      },
       watch:{
         MemberName(value){
           this.Members.splice(0);
           if(this.MemberName!==""){
-            if(!this.contacts){
+            if(!this.Contacts){
               return ;
             }
-            this.contacts.forEach((item,index)=>{
+            this.Contacts.forEach((item,index)=>{
               if(item.name.includes(this.MemberName)){
                 this.Members.push(item);
               }

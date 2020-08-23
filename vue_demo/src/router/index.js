@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 export default new VueRouter({
   routes:[
     {
-      path:'./about',
+      path:'/about',
       component:About,
       /*children:[
         {
@@ -19,11 +19,11 @@ export default new VueRouter({
       ]*/
     },
     {
-      path:'./help',
+      path:'/help',
       component:Help
     },
     {
-      path:'./contact',
+      path:'/contact',
       component:Contact
     },
     /*{

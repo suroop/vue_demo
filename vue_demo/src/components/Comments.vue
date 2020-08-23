@@ -46,7 +46,7 @@
     min-height: 50px;
     width: auto;
     line-height: 50px;
-    min-width: 50px;
+    min-width: 350px;
     padding-right: 55px;
   }
 

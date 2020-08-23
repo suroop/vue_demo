@@ -11,7 +11,7 @@
     export default {
       name: "List",
       components: {Item},
-      props:["contacts"],
+      /*props:["contacts"],*/
       data(){
         return {
           CurrentContacts:[],
@@ -19,8 +19,13 @@
           tempContacts:[]
         }
       },
+      computed:{
+        Contacts(){
+          return this.$store.state.contacts;
+        }
+      },
       mounted() {
-        this.CurrentContacts = this.contacts;
+        this.CurrentContacts = this.Contacts;
         Pubsub.subscribe("flash",(msg,Member)=>{
           this.tempContacts = Member;
           this.isSearched=Member.length;
@@ -29,7 +34,7 @@
       watch:{
         isSearched(value){
           if(value===0){
-            this.CurrentContacts = this.contacts;
+            this.CurrentContacts = this.Contacts;
           }else{
             this.CurrentContacts = this.tempContacts;
           }

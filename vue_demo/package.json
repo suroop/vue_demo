@@ -14,7 +14,8 @@
     "moment": "latest",
     "pubsub-js": "latest",
     "axios": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vuex": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
