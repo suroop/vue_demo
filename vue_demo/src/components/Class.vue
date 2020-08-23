@@ -21,9 +21,9 @@
       <div class="line"></div>
       <footer>
         <ul>
-          <li><h5>About</h5></li>
-          <li><h5>Help</h5></li>
-          <li><h5>Contact</h5></li>
+          <li><h5><router-link>About</router-link></h5></li>
+          <li><h5><router-link>Help</router-link></h5></li>
+          <li><h5><router-link>Contact</router-link></h5></li>
         </ul>
         <h5 style="text-align: center;color: #5F6267;">copyright&nbsp;©&nbsp;&nbsp;2020&nbsp;suroop</h5>
       </footer>

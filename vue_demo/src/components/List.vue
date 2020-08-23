@@ -1,13 +1,11 @@
 <template>
-  <div v-if="!isSearched" class="list">
-    <Item v-for="(contact,index) in contacts" :key="index" :contact="contact" />
-  </div>
-  <div v-else class="list">
-    <Item v-for="(CurrentContact,index) in contacts" :key="index" :contact="CurrentContact" />
+  <div class="list">
+    <Item v-for="(contact,index) in CurrentContacts" :key="index" :contact="contact" />
   </div>
 </template>
 
 <script>
+    import axios from 'axios'
     import Pubsub from 'pubsub-js'
     import Item from "./Item";
     export default {
@@ -16,17 +14,26 @@
       props:["contacts"],
       data(){
         return {
-          isSearched:false,
-          CurrentContacts:[]
+          CurrentContacts:[],
+          isSearched:undefined,
+          tempContacts:[]
         }
+      },
+      mounted() {
+        this.CurrentContacts = this.contacts;
+        Pubsub.subscribe("flash",(msg,Member)=>{
+          this.tempContacts = Member;
+          this.isSearched=Member.length;
+        })
       },
       watch:{
         isSearched(value){
-          if(value){
-            Pubsub.subscribe("flash",(msg,Members)=>{
-              this.CurrentContacts.fill(Members);
-            })
+          if(value===0){
+            this.CurrentContacts = this.contacts;
+          }else{
+            this.CurrentContacts = this.tempContacts;
           }
+
         }
       }
     }

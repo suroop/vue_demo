@@ -2,7 +2,7 @@
   <div class="searchmem">
     <div class="search-message">
       <label for="message"><i class="fa fa-search"></i></label>
-      <input type="text" name="search" id="message" placeholder="Search Message ..." autocomplete="off" v-model="MemberName" @change="SearchName" @keydown.enter="Goto">
+      <input type="text" name="search" id="message" placeholder="Search Message ..." autocomplete="off" v-model="MemberName">
     </div>
   </div>
 </template>
@@ -18,24 +18,26 @@
       },
       data(){
           return{
-            MemberName:'',
-            Members:[]
-          }
+          MemberName:'',
+          Members:[],
+        }
       },
-      methods:{
-        Goto(){
-          Pubsub.publish("flash",this.Members);
-        },
-        SearchName(){
-         if(this.MemberName!==''){
+      watch:{
+        MemberName(value){
+          this.Members.splice(0);
+          if(this.MemberName!==""){
+            if(!this.contacts){
+              return ;
+            }
             this.contacts.forEach((item,index)=>{
-              if(item.includes(this.MemberName)){
-                this.Members.push(this.contacts[index])
+              if(item.name.includes(this.MemberName)){
+                this.Members.push(item);
               }
             });
-           }
+            }
+          Pubsub.publish("flash",this.Members);
         }
-      }
+      },
     }
 </script>
 

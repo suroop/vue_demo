@@ -12,7 +12,7 @@
             <Msg @addComment="addComment"/>
           </div>
           <div class="right-col">
-            <Searchmem :contact="contacts"/>
+            <Searchmem :contacts="contacts"/>
             <List :contacts="contacts"/>
           </div>
         </div>

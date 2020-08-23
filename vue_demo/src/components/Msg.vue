@@ -31,9 +31,8 @@
             TextType:"MyText",
             img:"../../static/assets/img4.jpg"
           };
-          /*console.log(AMessage);*/
           this.$emit("addComment",AMessage);
-          this.Msg='';
+          this.msg='';
         }
       }
     }

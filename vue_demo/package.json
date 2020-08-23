@@ -12,7 +12,9 @@
   "dependencies": {
     "vue": "^2.5.2",
     "moment": "latest",
-    "pubsub-js": "latest"
+    "pubsub-js": "latest",
+    "axios": "latest",
+    "vue-router": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

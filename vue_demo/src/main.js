@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import Base from './base.css'
-
+import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -13,5 +13,6 @@ new Vue({
     App ,
     Base
   },
-  template: '<App/>'
+  template: '<App/>',
+  router
 });
